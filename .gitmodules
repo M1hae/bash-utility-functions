@@ -1,0 +1,3 @@
+[submodule "thirdparty/bats"]
+	path = thirdparty/bats
+	url = https://github.com/sstephenson/bats
