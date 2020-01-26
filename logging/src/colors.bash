@@ -1,5 +1,5 @@
 if [[ ${BU_COLORS} -ne 1 ]]; then
-    export BU_COLORS=1
+    BU_COLORS=1
     #Thx to https://misc.flogisoft.com/bash/tip_colors_and_formatting
     # Yeah I know global variables... global variables everywhere! But lets be serious I guess you wanna use them all ;D 
     c_black="\e[30m"

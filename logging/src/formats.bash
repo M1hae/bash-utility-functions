@@ -1,5 +1,5 @@
 if [[ ${BU_FORMATS} -ne 1 ]]; then
-    export BU_FORMATS=1
+    BU_FORMATS=1
     #Thx to https://misc.flogisoft.com/bash/tip_colors_and_formatting
     # Yeah I know global variables... global variables everywhere! But lets be serious I guess you wanna use them all ;D 
     f_bold="\e[1m"
