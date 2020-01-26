@@ -18,15 +18,21 @@ function Debug() {
 }
 
 function Info() {
-    echo -e "${c_green}Info: ${f_reset_all}${@}"
+    if [[ ${bu_log_level} -ne -1 && ${bu_log_level} -ge 2 ]]; then
+        echo -e "${c_green}Info: ${f_reset_all}${@}"
+    fi
 }
 
 function Warning() {
-    echo -e "${c_red}Warning: ${f_reset_all}${@}"
+    if [[ ${bu_log_level} -ne -1 && ${bu_log_level} -ge 1 ]]; then
+        echo -e "${c_red}Warning: ${f_reset_all}${@}"
+    fi
 }
 
 function Fatal() {
-    echo -e "${f_blink}${c_red}Fatal: ${f_reset_all}${@}"
+    if [[ ${bu_log_level} -ne -1 && ${bu_log_level} -ge 0 ]]; then
+        echo -e "${f_blink}${c_red}Fatal: ${f_reset_all}${@}"
+    fi
 }
 
 function SetLogLevel(){
