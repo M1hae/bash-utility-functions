@@ -4,7 +4,7 @@ function AssertStatus()
     [[ "${status}" -eq ${1} ]]
 }
 
-#Since we are comparing strings on a console we need an ultra verbose logging output
+#Since we are comparing strings on console we need an ultra verbose logging output
 function AssertOutput()
 {
     echo "Expected:"
