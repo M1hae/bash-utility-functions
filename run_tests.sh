@@ -1,11 +1,9 @@
 #!/bin/bash
-
 set -eu
 
 source logging/src/logging.bash
 
 bats='thirdparty/bats/bin/bats'
-
 
 Info "Single argument tests"
 ${bats} logging/test/single_argument_tests.bash
