@@ -6,28 +6,12 @@ if [[ ! -v BU_FILESYSTEM ]]; then
 
     function IsFile()
     {
-        [[ -f "${1}" ]]
+        [ -f "${1}" ]
     }
 
     function IsDirectory()
     {
-        [[ -d "${1}" ]]
-    }
-
-    function AssertIsFile()
-    {
-        if ! IsFile ${1} ;then
-        {
-            Fatal "File ${1} does not exists"
-        }
-    }
-
-    function AssertIsDirectory()
-    {
-        if ! IsDirectory ${1} ;then
-        {
-            Fatal "Directory ${1} does not exists"
-        }
+        [ -d "${1}" ]
     }
 
     function IsExisting()
@@ -55,6 +39,69 @@ if [[ ! -v BU_FILESYSTEM ]]; then
         [[ -x "${1}" ]]
     }
 
+    function AssertIsFile()
+    {
+        if ! IsFile "${1}" ;then
+            Die "File ${1} does not exist"
+        else
+            Debug "File ${1} exists"
+        fi
+    }
+
+    function AssertIsDirectory()
+    {
+        if ! IsDirectory "${1}" ;then
+            Die "Directory ${1} does not exist"
+        else
+            Debug "Directory ${1} exists"
+        fi
+    }
+
+    function AssertIsExisting()
+    {
+        if ! IsExisting "${1}" ;then
+            Die "${1} does not exist"
+        else
+            Debug "${1} exists"
+        fi
+    }
+
+    function AssertIsSymbolicLink()
+    {
+        if ! IsSymbolicLink "${1}" ;then
+            Die "${1} is not a symbolic link"
+        else
+            Debug "${1} is a symbolic link"
+        fi
+    }
+
+    function AssertIsReadable()
+    {
+        if ! IsExisting "${1}" ;then
+            Die "${1} is not readable"
+        else
+            Debug "${1} is readable"
+        fi
+    }
+
+    function AssertIsWriteable()
+    {
+        if ! IsWriteable "${1}" ;then
+            Die "${1} is not writeable"
+        else
+            Debug "${1} is writeable"
+        fi
+    }
+
+    function AssertIsExecutable()
+    {
+        if ! IsExecutable "${1}" ;then
+            Die "${1} is not executable"
+        else
+            Debug "${1} is executable"
+        fi
+    }
+
     function IsMoreRecent()
     {
         [[ "${1}" -nt "${2}" ]]
@@ -67,44 +114,42 @@ if [[ ! -v BU_FILESYSTEM ]]; then
 
     function GetFilename()
     {
-
+        Die "Not implemented yet"
     }
 
     function GetFoldername()
     {
-
+        Die "Not implemented yet"
     }
 
     function GetAbsolutPath()
     {
-
+        Die "Not implemented yet"
     }
 
     function GetCurrentDirectoryPath()
     {
-
+        Die "Not implemented yet"
     }
 
     function WriteToFile()
     {
-
+        Die "Not implemented yet"
     }
 
     function MakeDirectory()
     {
-
+        Die "Not implemented yet"
     }
 
     function ReplaceInFile()
     {
-
+        Die "Not implemented yet"
     }
 
     function ExistsInFile()
     {
-        
+        Die "Not implemented yet"
     }
-
-
 
 fi
