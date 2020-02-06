@@ -14,19 +14,19 @@ if [[ ! -v BU_FILESYSTEM ]]; then
         [ -d "${1}" ]
     }
 
+    function IsSymbolicLink()
+    {
+        [[ -h "${1}" ]]
+    }
+
     function IsExisting()
     {
-        [[ -e "${1}" ]]
+        IsFile "${1}" || IsDirectory "${1}" || IsSymbolicLink "${1}"
     }
 
     function IsReadable()
     {
         [[ -r "${1}" ]]
-    }
-
-    function IsSymbolicLink()
-    {
-        [[ -h "${1}" ]]
     }
 
     function IsWriteable()
@@ -59,6 +59,7 @@ if [[ ! -v BU_FILESYSTEM ]]; then
 
     function AssertIsExisting()
     {
+        Die "Not implemented yet"
         if ! IsExisting "${1}" ;then
             Die "${1} does not exist"
         else
@@ -68,6 +69,7 @@ if [[ ! -v BU_FILESYSTEM ]]; then
 
     function AssertIsSymbolicLink()
     {
+        Die "Not implemented yet"
         if ! IsSymbolicLink "${1}" ;then
             Die "${1} is not a symbolic link"
         else
@@ -77,6 +79,7 @@ if [[ ! -v BU_FILESYSTEM ]]; then
 
     function AssertIsReadable()
     {
+        Die "Not implemented yet"
         if ! IsExisting "${1}" ;then
             Die "${1} is not readable"
         else
@@ -86,6 +89,7 @@ if [[ ! -v BU_FILESYSTEM ]]; then
 
     function AssertIsWriteable()
     {
+        Die "Not implemented yet"
         if ! IsWriteable "${1}" ;then
             Die "${1} is not writeable"
         else
@@ -95,6 +99,7 @@ if [[ ! -v BU_FILESYSTEM ]]; then
 
     function AssertIsExecutable()
     {
+        Die "Not implemented yet"
         if ! IsExecutable "${1}" ;then
             Die "${1} is not executable"
         else
@@ -104,11 +109,13 @@ if [[ ! -v BU_FILESYSTEM ]]; then
 
     function IsMoreRecent()
     {
+        Die "Not implemented yet"
         [[ "${1}" -nt "${2}" ]]
     }
 
     function IsSameFile()
     {
+        Die "Not implemented yet"
         [[ "${1}" -ef "${2}" ]]
     }
 
