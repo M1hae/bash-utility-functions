@@ -27,7 +27,7 @@ if [[ ! -v BU_STRING ]]; then
 
     function RemoveAt()
     {
-        AssertNumberOfParameters 2 ${#} "RemoveAt"
+        AssertNumberOfParameters 2 $# "RemoveAt"
 
         if [[ ${2} -ge 0 ]]; then
             echo ${1:0:${2}}${1:$(( ${2} + 1 ))}
@@ -49,7 +49,7 @@ if [[ ! -v BU_STRING ]]; then
 
     function SplitAtReturnFirst()
     {
-        AssertNumberOfParameters 2 ${#} "SplitAtReturnFirst"
+        AssertNumberOfParameters 2 $# "SplitAtReturnFirst"
 
         if [[ ${2} -ge 0 ]]; then
             echo ${1:0:${2}}
@@ -60,13 +60,19 @@ if [[ ! -v BU_STRING ]]; then
 
     function SplitAtReturnLast()
     {
-        AssertNumberOfParameters 2 ${#} "SplitAtReturnLast"
+        AssertNumberOfParameters 2 $# "SplitAtReturnLast"
 
         if [[ ${2} -ge 0 ]]; then
             echo ${1:${2}}
         else
             echo ${1}
         fi  
+    }
+
+    function GetFirstChar()
+    {
+        # We only need the first word of the string. Therefore ${1} is enough
+        SplitAtReturnFirst "${1}" 1
     }
 
 fi # String

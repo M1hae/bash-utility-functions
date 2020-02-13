@@ -8,8 +8,8 @@ function AssertStatus()
 function AssertOutput()
 {
     echo "Expected:"
-    echo -e "${1}" | tr -dc '[:print:]' | od -c
+    echo "${1}" | od -c
     echo "Actual:"
-    echo -e "${output}" | tr -dc '[:print:]' | od -c
+    echo "${output}" | od -c
     [[ "${output}" = "${1}" ]]
 }
