@@ -9,6 +9,12 @@ help_text_default_output="Info: The following parameters are supported within th
 Category None:
    -h - Display this help screen (Aliases: --h, --h, --help, -help)"
 
+function MyFancyTestFunction()
+{
+   my_temp_test_string="a massive string"
+   my_temp_test_num=42
+}
+
 #
 # RegisterParameter tests
 #
@@ -106,35 +112,58 @@ Category None:
 #     AssertStatus 0
 # }
 
-@test "GIVEN nothing, WHEN ProcessParameters with -h, THEN help text displayed" {
+# @test "GIVEN nothing, WHEN ProcessParameters with -h, THEN help text displayed" {
 
-    EnableRawLogging
+#     EnableRawLogging
 
-    run ProcessParameters "-h"
+#     run ProcessParameters "-h"
 
-    Info ${output}
+#     Info ${output}
 
-    AssertOutput "${help_text_default_output}"
-    AssertStatus 0
+#     AssertOutput "${help_text_default_output}"
+#     AssertStatus 0
+# }
+
+# @test "GIVEN parameter, WHEN RegisterParameter and ProcessParameter with -h, THEN help text displayed" {
+#     EnableRawLogging
+#     my_parameter="-p"
+#     my_helptext="My super helpful text"
+#     my_function="echo"
+#     my_category="Blubb"
+#     expected_output=$(echo -e "${help_text_default_output}\n\nCategory Blubb:\n   -p - My super helpful text")
+
+#     RegisterParameter "${my_parameter}" "${my_function}" "${my_helptext}" "${my_category}"
+
+#     run ProcessParameters "-h"
+
+#     AssertOutput "${expected_output}"
+#     AssertStatus 0
+# }
+
+@test "GIVEN not registered parameter, WHEN ProcessParameter, THEN terminate" {
+   EnableRawLogging
+   my_parameter="-o"
+   expected_output="Fatal: Could not find ${my_parameter}! You need to register it first with RegisterParameter"
+
+   run ProcessParameters "${my_parameter}"
+
+   Info "${output}"
+   
+   AssertOutput "${expected_output}"
+   AssertStatus 1
 }
 
-@test "GIVEN parameter, WHEN RegisterParameter and ProcessParameter with -h, THEN help text displayed" {
-    EnableRawLogging
-    my_parameter="-p"
-    my_helptext="My super helpful text"
-    my_function="echo"
-    my_category="Blubb"
-    expected_output=$(echo -e "${help_text_default_output}\n\nCategory Blubb:\n   -p - My super helpful text")
+@test "GIVEN parameter with bash function, WHEN ProcessParameter, THEN variables set to defined ones" {
+   EnableRawLogging
+   my_parameter="-p"
+   my_helptext="Set my_temp_test_string=\"a massive string\" and my_temp_test_num=42"
+   my_function="MyFancyTestFunction"
 
-    RegisterParameter "${my_parameter}" "${my_function}" "${my_helptext}" "${my_category}"
+   RegisterParameter "${my_parameter}" "${my_function}" "${my_helptext}"
 
-    run ProcessParameters "-h"
-
-    AssertOutput "${expected_output}"
-    AssertStatus 0
+   ProcessParameters "${my_parameter}"
+   
+   AssertStatus 0
+   [[ "${my_temp_test_string}" = "a massive string" ]]
+   [[ ${my_temp_test_num} -eq 42 ]]
 }
-
-
-#
-# test multiple scripts in a row
-#
