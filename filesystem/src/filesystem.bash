@@ -59,7 +59,7 @@ if [[ ! -v BU_FILESYSTEM ]]; then
 
     function AssertIsExisting()
     {
-        Die "Not implemented yet"
+        Die "${FUNCNAME[0]} not implemented yet"
         if ! IsExisting "${1}" ;then
             Die "${1} does not exist"
         else
@@ -69,7 +69,7 @@ if [[ ! -v BU_FILESYSTEM ]]; then
 
     function AssertIsSymbolicLink()
     {
-        Die "Not implemented yet"
+        Die "${FUNCNAME[0]} not implemented yet"
         if ! IsSymbolicLink "${1}" ;then
             Die "${1} is not a symbolic link"
         else
@@ -79,7 +79,7 @@ if [[ ! -v BU_FILESYSTEM ]]; then
 
     function AssertIsReadable()
     {
-        Die "Not implemented yet"
+        Die "${FUNCNAME[0]} not implemented yet"
         if ! IsExisting "${1}" ;then
             Die "${1} is not readable"
         else
@@ -89,7 +89,7 @@ if [[ ! -v BU_FILESYSTEM ]]; then
 
     function AssertIsWriteable()
     {
-        Die "Not implemented yet"
+        Die "${FUNCNAME[0]} not implemented yet"
         if ! IsWriteable "${1}" ;then
             Die "${1} is not writeable"
         else
@@ -99,7 +99,6 @@ if [[ ! -v BU_FILESYSTEM ]]; then
 
     function AssertIsExecutable()
     {
-        Die "Not implemented yet"
         if ! IsExecutable "${1}" ;then
             Die "${1} is not executable"
         else
@@ -109,54 +108,54 @@ if [[ ! -v BU_FILESYSTEM ]]; then
 
     function IsMoreRecent()
     {
-        Die "Not implemented yet"
+        Die "${FUNCNAME[0]} not implemented yet"
         [[ "${1}" -nt "${2}" ]]
     }
 
     function IsSameFile()
     {
-        Die "Not implemented yet"
+        Die "${FUNCNAME[0]} not implemented yet"
         [[ "${1}" -ef "${2}" ]]
     }
 
     function GetFilename()
     {
-        Die "Not implemented yet"
+        Die "${FUNCNAME[0]} not implemented yet"
     }
 
     function GetFoldername()
     {
-        Die "Not implemented yet"
+        Die "${FUNCNAME[0]} not implemented yet"
     }
 
     function GetAbsolutPath()
     {
-        Die "Not implemented yet"
+        Die "${FUNCNAME[0]} not implemented yet"
     }
 
     function GetCurrentDirectoryPath()
     {
-        Die "Not implemented yet"
+        Die "${FUNCNAME[0]} not implemented yet"
     }
 
     function WriteToFile()
     {
-        Die "Not implemented yet"
+        Die "${FUNCNAME[0]} not implemented yet"
     }
 
     function MakeDirectory()
     {
-        Die "Not implemented yet"
+        Die "${FUNCNAME[0]} not implemented yet"
     }
 
     function ReplaceInFile()
     {
-        Die "Not implemented yet"
+        Die "${FUNCNAME[0]} not implemented yet"
     }
 
     function ExistsInFile()
     {
-        Die "Not implemented yet"
+        Die "${FUNCNAME[0]} not implemented yet"
     }
 
 fi
