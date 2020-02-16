@@ -26,14 +26,13 @@ function main()
 
 main "$@"
 ```
+This script(bu_example.sh) is also commited in the main directory. To see the help text use:
 
-To see the help text use:
-
-```./my_script.sh -h```
+```./bu_example.sh -h```
 
 Print info:
 
-```./my_script.sh -i "My info message"```
+```./bu_example.sh -i "My info message"```
 
 Analog behavior can be expected for -f and -d. Of course with different output ;D... 
 
