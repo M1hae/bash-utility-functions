@@ -37,6 +37,13 @@ Print info:
 Analog behavior can be expected for -f and -d. Of course with different output ;D... 
 
 
+# How to run the tests
+You need to clone bats into the thirdparty folder first:
+```
+git submodule init
+git submodule update
+```
+
 # TODO
 - Doxygen for each defined function. Currently nothing is documented... yep thats crap im working on it :)
 - Test coverage
