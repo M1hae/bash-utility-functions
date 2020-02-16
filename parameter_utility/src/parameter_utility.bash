@@ -75,7 +75,7 @@ if [[ ! -v BU_PARAMETER_UTILITY ]]; then
     }
 
     #
-    # Call this function with all parameters passed to your script.
+    # Call this function with all parameters passed to your script. Use "${@}"!
     # Note: You need to register all you parameters first
     #
     function ProcessParameters()
@@ -116,7 +116,7 @@ if [[ ! -v BU_PARAMETER_UTILITY ]]; then
                     fi
 
                     Debug "Execute bash function or command \"${bu_parameter_func[${j}]}\" with ${additional_parameter}"
-                    eval "${bu_parameter_func[${j}]} ${additional_parameter}" &>/dev/null || Die "Execution of \"${bu_parameter_func[${j}]} ${additional_parameter}\" failed! Please check your RegisterParameter section"
+                    eval "${bu_parameter_func[${j}]} ${additional_parameter}" || Die "Execution of \"${bu_parameter_func[${j}]} ${additional_parameter}\" failed! Please check your RegisterParameter section"
                     
                     Debug "Done"
                     additional_parameter=""
@@ -125,67 +125,10 @@ if [[ ! -v BU_PARAMETER_UTILITY ]]; then
                 para_counter=$((para_counter+1))
             done
 
-
             if [[ ${#bu_parameter[@]} -eq ${para_counter} ]]; then
                 Die "Could not find ${!i}! You need to register it first with RegisterParameter"
             fi
         done
-
-
-
-        # local next_parameter=""
-        # local next_parameter_add_arg=""
-        # for ((i=1; i <= $#; i++ )); do
-        #     input_para=$(eval "echo \${${i}}")
-
-        #     if [[ "${next_parameter}" = "" ]]; then
-        #         next_parameter=${input_para}
-        #         continue
-        #     fi
-            
-        #     #load parameter until "-" or end occurs
-        #     if [[ ${i} -lt $# ]]; then
-        #         local next_index="\${$((i))}"
-
-        #         local next_para=$(eval "echo ${next_index}")
-        #         next_parameter_start=$(GetFirstChar "${next_para}")
- 
-        #         # Lets search for an possible additional parameter
-        #         if ! [[ "${next_parameter_start}" = "-" ]]; then
-        #             next_parameter_add_arg+="${next_para} "
-        #             continue
-        #         fi
-        #     fi
-            
-        #     local para_counter=0
-            
-        #     Info "parameter ${next_parameter}"
-        #     Info "args ${next_parameter_add_arg}"
-
-        #     for j in "${!bu_parameter[@]}"; do  
-        #         if [[ "${bu_parameter[${j}]}" = "${next_parameter}" ]]; then
-        #             Debug "Found ${bu_parameter[${j}]}"
-
-        #             Debug "Execute bash function or command \"${bu_parameter_func[${j}]}\" with ${next_parameter_add_arg}"
-        #             eval "${bu_parameter_func[${j}]} ${next_parameter_add_arg}"  || Die "Execution of bash command ${bu_parameter_func[${j}]} failed!"
-        #             Debug "Done"
-        #             break
-        #         fi
-        #         para_counter=$((para_counter+1))
-        #     done
-
-
-        #     if [[ ${#bu_parameter[@]} -eq ${para_counter} ]]; then
-        #         Die "Could not find ${input_para}! You need to register it first with RegisterParameter"
-        #     fi
-            
-        #     next_parameter=""
-        #     next_parameter_add_arg=""
-        #     i=$((${i}-1))
-        # done
-
-        
-        # Die "${FUNCNAME[0]} not implemented yet"
     }
 
 fi 

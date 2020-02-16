@@ -99,7 +99,6 @@ if [[ ! -v BU_FILESYSTEM ]]; then
 
     function AssertIsExecutable()
     {
-        Die "${FUNCNAME[0]} not implemented yet"
         if ! IsExecutable "${1}" ;then
             Die "${1} is not executable"
         else
