@@ -3,7 +3,6 @@ load ../../testing/test_utilities
 load ../../logging/src/logging
 
 
-
 help_text_default_output="Info: The following parameters are supported within this script:
 
 Category None:
@@ -24,7 +23,6 @@ function MyFunctionNeedsAnARG()
 # RegisterParameter tests
 #
 @test "GIVEN parameter, WHEN RegisterParameter with parameter, THEN return code 0" {
-
     my_parameter="-p"
     my_helptext="My super helpful text"
     my_function="echo"
@@ -35,7 +33,6 @@ function MyFunctionNeedsAnARG()
 }
 
 @test "GIVEN parameter, WHEN RegisterParameter with one and two arguments, THEN return code 1" {
-
     my_parameter="-p"
     my_helptext="My super helpful text"
     my_function="echo"
@@ -48,7 +45,6 @@ function MyFunctionNeedsAnARG()
 }
 
 @test "GIVEN parameter, WHEN RegisterParameter with five arguments, THEN return code 1" {
-
     my_parameter="-p"
     my_helptext="My super helpful text"
     my_function="echo"
@@ -67,7 +63,6 @@ function MyFunctionNeedsAnARG()
     Info "${output}"
     AssertStatus 1
 
-
     my_parameter="--h"
 
     run RegisterParameter "${my_parameter}" "${my_function}" "${my_helptext}"
@@ -75,14 +70,12 @@ function MyFunctionNeedsAnARG()
     Info "${output}"
     AssertStatus 1
 
-
     my_parameter="-help"
 
     run RegisterParameter "${my_parameter}" "${my_function}" "${my_helptext}"
 
     Info "${output}"
     AssertStatus 1
-
 
     my_parameter="--help"
 
@@ -93,7 +86,6 @@ function MyFunctionNeedsAnARG()
 }
 
 @test "GIVEN parameter with no category, WHEN RegisterParameter, THEN category None" {
-
     my_parameter="-p"
     my_helptext="My super helpful text"
     my_function="echo"
@@ -105,7 +97,6 @@ function MyFunctionNeedsAnARG()
 }
 
 @test "GIVEN parameter with category, WHEN RegisterParameter, THEN right category set" {
-
     my_parameter="-p"
     my_helptext="My super helpful text"
     my_function="echo"
@@ -118,7 +109,6 @@ function MyFunctionNeedsAnARG()
 }
 
 @test "GIVEN nothing, WHEN ProcessParameters with -h, THEN help text displayed" {
-
     EnableRawLogging
 
     run ProcessParameters "-h"

@@ -71,7 +71,7 @@ if [[ ! -v BU_STRING ]]; then
 
     function GetFirstChar()
     {
-        # We only need the first word of the string. Therefore ${1} is enough
+        # We only need the first "word" of the string. Therefore ${1} is enough
         SplitAtReturnFirst "${1}" 1
     }
 

@@ -94,9 +94,6 @@ if [[ ! -v BU_PARAMETER_UTILITY ]]; then
 
             Debug "Process input ${argument}"
 
-            # This is still wrong ./run_tests.sh -b "asdf Test" -b "fajsdfhah" -e hdahsdd -b "t"
-            # Without parameter it is still a problem
-
             for j in "${!bu_parameter[@]}"; do
                 if [[ "${bu_parameter[${j}]}" = "${argument}" ]]; then
                     Debug "Found ${bu_parameter[${j}]}"
