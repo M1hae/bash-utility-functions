@@ -33,7 +33,7 @@ To see the help text use:
 
 Print info:
 
-```./my_script -i "My info message"```
+```./my_script.sh -i "My info message"```
 
 Analog behavior can be expected for -f and -d. Of course with different output ;D... 
 
