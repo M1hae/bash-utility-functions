@@ -5,7 +5,7 @@ I have to admit yes it feels a bit strange to still write bash scripts but if yo
 
 
 # How to use it
-Just clone it into your favorite directory and source the bash utility componente you want to use. All utility function are written in a way that they include the needed ones in the right way and only once! For example:
+Just clone it into your favorite directory and source the bash utility componente(e.g logging, filesystem, ...) you want to use. All bash utility componets are written in a way that they include the needed ones in the right way and only once! For example:
 
 ```
 #!/bin/bash
