@@ -7,11 +7,12 @@ I have to admit yes it feels a bit strange to still write bash scripts but if yo
 # How to use it
 Just clone it into your favorite directory and source the bash utility componente you want to use. All utility function are written in a way that they include the needed ones in the right way and only once! For example:
 
-#########################################
+```
 
 #!/bin/bash
 
-source logging/src/logging.bash 
+source logging/src/logging.bash
+
 source parameter_utility/src/parameter_utility.bash
 
 
@@ -29,7 +30,7 @@ function main()
 
 main "$@"
 
-#########################################
+```
 
 To see the help text use:
 ./my_script.sh -h
