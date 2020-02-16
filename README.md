@@ -42,6 +42,8 @@ You need to clone bats into the thirdparty folder first:
 ```
 git submodule init
 git submodule update
+
+./run_tests.sh
 ```
 
 # TODO
