@@ -59,7 +59,6 @@ if [[ ! -v BU_FILESYSTEM ]]; then
 
     function AssertIsExisting()
     {
-        Die "${FUNCNAME[0]} not implemented yet"
         if ! IsExisting "${1}" ;then
             Die "${1} does not exist"
         else
@@ -69,7 +68,6 @@ if [[ ! -v BU_FILESYSTEM ]]; then
 
     function AssertIsSymbolicLink()
     {
-        Die "${FUNCNAME[0]} not implemented yet"
         if ! IsSymbolicLink "${1}" ;then
             Die "${1} is not a symbolic link"
         else
@@ -79,8 +77,7 @@ if [[ ! -v BU_FILESYSTEM ]]; then
 
     function AssertIsReadable()
     {
-        Die "${FUNCNAME[0]} not implemented yet"
-        if ! IsExisting "${1}" ;then
+        if ! IsReadable "${1}" ;then
             Die "${1} is not readable"
         else
             Debug "${1} is readable"
@@ -89,7 +86,6 @@ if [[ ! -v BU_FILESYSTEM ]]; then
 
     function AssertIsWriteable()
     {
-        Die "${FUNCNAME[0]} not implemented yet"
         if ! IsWriteable "${1}" ;then
             Die "${1} is not writeable"
         else
