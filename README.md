@@ -49,5 +49,6 @@ git submodule update
 # TODO
 - Doxygen for each defined function. Currently nothing is documented... yep thats crap im working on it :)
 - Test coverage
+- Better idea how to split the components
 - Mocks for commands we do not want to execute (e.g. sudo, git clone, ...)
 - Ideas or even implementations are highly welcome. Just do not forget to test your stuff in the same pattern otherwise I will simply reject it.
