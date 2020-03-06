@@ -258,3 +258,81 @@ teardown()
     AssertOutput "${expected_output}"
 }
 
+#
+# AssertIsExisting tests
+#
+@test "GIVEN existing file and direcotry, WHEN executing AssertIsExisting, THEN return code 0" {
+    run AssertIsExisting ${log_file}
+    AssertStatus 0
+    
+    run AssertIsExisting ${test_folder_structure_short}
+    AssertStatus 0
+}
+
+@test "GIVEN not existing file and direcotry, WHEN executing AssertIsExisting, THEN return code 1" {
+    run AssertIsExisting "${log_file}.old"
+    AssertStatus 1
+    
+    run AssertIsExisting "${test_folder_structure_short}/asdf"
+    AssertStatus 1
+}
+
+#
+# AssertIsSymbolicLink
+#
+@test "GIVEN existing symbolic link, WHEN executing AssertIsSymbolicLink, THEN return code 0" {
+    run AssertIsSymbolicLink "${symbolic_link_to_file}"
+
+    AssertStatus 0
+}
+
+@test "GIVEN not existing symbolic link, WHEN executing AssertIsSymbolicLink, THEN return code 1" {
+    run AssertIsSymbolicLink "${symbolic_link_to_file}.old"
+
+    AssertStatus 1
+}
+
+#
+# AssertIsReadable
+#
+@test "GIVEN existing readable file, WHEN executing AssertIsReadable, THEN return code 0" {
+    run AssertIsReadable "${log_file}"
+
+    AssertStatus 0
+}
+
+@test "GIVEN not readable file, WHEN executing AssertIsReadable, THEN return code 1" {
+    run AssertIsReadable "${not_readable_file}"
+
+    AssertStatus 1
+}
+
+#
+# AssertIsWriteable
+#
+@test "GIVEN existing writeable file, WHEN executing AssertIsWriteable, THEN return code 0" {
+    run AssertIsWriteable "${log_file}"
+
+    AssertStatus 0
+}
+
+@test "GIVEN not writeable file, WHEN executing AssertIsWriteable, THEN return code 1" {
+    run AssertIsWriteable "${not_writeable_file}"
+
+    AssertStatus 1
+}
+
+#
+# AssertIsExecutable
+#
+@test "GIVEN existing executable file, WHEN executing AssertIsExecutable, THEN return code 0" {
+    run AssertIsExecutable "${log_file}"
+
+    AssertStatus 0
+}
+
+@test "GIVEN not executable file, WHEN executing AssertIsExecutable, THEN return code 1" {
+    run AssertIsExecutable "${not_executable_file}"
+
+    AssertStatus 1
+}
