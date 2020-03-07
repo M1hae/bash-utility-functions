@@ -10,7 +10,6 @@ Just clone it into your favorite directory and source the bash utility component
 ```
 #!/bin/bash
 
-source logging/src/logging.bash
 source parameter_utility/src/parameter_utility.bash
 
 function main()
