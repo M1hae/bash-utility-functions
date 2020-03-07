@@ -35,6 +35,8 @@ Print info:
 
 Analog behavior can be expected for -f and -d. Of course with different output ;D... 
 
+# Doxygen documentation
+Can be found here -> https://m1hae.github.io/bash-utility-functions/docs/html/index.html <-
 
 # How to run the tests
 You need to clone bats into the thirdparty folder first:
@@ -46,7 +48,6 @@ git submodule update
 ```
 
 # TODO
-- Reference doxygen on github pages
 - Autogenerate doxygen on post merge
 - Test coverage
 - Better idea how to split the components
