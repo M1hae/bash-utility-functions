@@ -46,7 +46,8 @@ git submodule update
 ```
 
 # TODO
-- Doxygen for each defined function. Currently nothing is documented... yep thats crap im working on it :)
+- Reference doxygen on github pages
+- Autogenerate doxygen on post merge
 - Test coverage
 - Better idea how to split the components
 - Mocks for commands we do not want to execute (e.g. sudo, git clone, ...)
