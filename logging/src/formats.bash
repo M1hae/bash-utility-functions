@@ -5,6 +5,7 @@
 ## @date			07-03-2020
 ## @copyright		Released under the MIT
 ## @details         Can be used inside echo to switch the font formats
+
 if [[ ! -v BU_FORMATS ]]; then
 BU_FORMATS=1
 

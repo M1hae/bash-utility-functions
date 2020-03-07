@@ -5,6 +5,7 @@
 ## @date			07-03-2020
 ## @copyright		Released under the MIT
 ## @details         Can be used inside echo to switch the font color
+
 if [[ ! -v BU_COLORS ]]; then
 BU_COLORS=1
 
