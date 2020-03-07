@@ -113,7 +113,7 @@ if [[ ! -v BU_PARAMETER_UTILITY ]]; then
                     fi
 
                     Debug "Execute bash function or command \"${bu_parameter_func[${j}]}\" with ${additional_parameter}"
-                    eval "${bu_parameter_func[${j}]} ${additional_parameter}" || Die "Execution of \"${bu_parameter_func[${j}]} ${additional_parameter}\" failed! Please check your RegisterParameter section"
+                    eval "${bu_parameter_func[${j}]} \"${additional_parameter}\"" || Die "Execution of \"${bu_parameter_func[${j}]} ${additional_parameter}\" failed! Please check your RegisterParameter section"
                     
                     Debug "Done"
                     additional_parameter=""

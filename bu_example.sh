@@ -1,8 +1,6 @@
 #!/bin/bash
 
-source logging/src/logging.bash
 source parameter_utility/src/parameter_utility.bash
-
 
 function main()
 {
