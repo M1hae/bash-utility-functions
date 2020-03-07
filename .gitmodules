@@ -1,3 +1,7 @@
 [submodule "thirdparty/bats"]
 	path = thirdparty/bats
 	url = https://github.com/sstephenson/bats
+
+[submodule "docs/helpers/bash-doxygen"]
+	path = docs/helpers/bash-doxygen
+	url = https://github.com/Anvil/bash-doxygen
