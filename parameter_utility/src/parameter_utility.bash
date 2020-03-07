@@ -25,8 +25,8 @@ declare -ag bu_parameter_help=("Display this help screen (Aliases: --h, --h, --h
 ## @brief Array to hold all categories of the parameters. IMPORTANT: Do not change the order of this
 declare -ag bu_parameter_cat=("None")
 
-## @brief Counter for already registered parameters
-declare bu_p_counter=1
+# Internally used to determine the current amount of registered parameters
+bu_p_counter=1
 
 ## @fn IsHelpArgument()
 ## @brief Check if the passed string fits "-h", "-help", "--h", "--help"
