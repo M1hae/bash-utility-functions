@@ -102,18 +102,6 @@ if [[ ! -v BU_FILESYSTEM ]]; then
         fi
     }
 
-    function IsMoreRecent()
-    {
-        Die "${FUNCNAME[0]} not implemented yet"
-        [[ "${1}" -nt "${2}" ]]
-    }
-
-    function IsSameFile()
-    {
-        Die "${FUNCNAME[0]} not implemented yet"
-        [[ "${1}" -ef "${2}" ]]
-    }
-
     function GetFilename()
     {
         Die "${FUNCNAME[0]} not implemented yet"
@@ -125,21 +113,6 @@ if [[ ! -v BU_FILESYSTEM ]]; then
     }
 
     function GetAbsolutPath()
-    {
-        Die "${FUNCNAME[0]} not implemented yet"
-    }
-
-    function GetCurrentDirectoryPath()
-    {
-        Die "${FUNCNAME[0]} not implemented yet"
-    }
-
-    function WriteToFile()
-    {
-        Die "${FUNCNAME[0]} not implemented yet"
-    }
-
-    function MakeDirectory()
     {
         Die "${FUNCNAME[0]} not implemented yet"
     }

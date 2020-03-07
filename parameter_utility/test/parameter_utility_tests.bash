@@ -16,7 +16,7 @@ function MyFancyTestFunction()
 
 function MyFunctionNeedsAnARG()
 {
-    echo "$@"
+    echo "$1"
 }
 
 #
