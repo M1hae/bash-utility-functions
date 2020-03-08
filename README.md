@@ -50,8 +50,7 @@ git submodule update
 ```
 
 # TODO
-- Autogenerate doxygen on post merge
-- Test coverage
+- Autogenerate doxygen and test coverage on post merge
 - Better idea how to split the components
 - Mocks for commands we do not want to execute (e.g. sudo, git clone, ...)
 - Ideas or even implementations are highly welcome. Just do not forget to test your stuff in the same pattern otherwise I will simply reject it.
