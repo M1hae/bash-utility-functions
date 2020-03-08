@@ -194,3 +194,12 @@ function MyFunctionNeedsAnARG()
    AssertStatus 0
    AssertOutput "${expected_output}"
 }
+
+@test "GIVEN random argument, WHEN calling DisplayHelpMessages, THEN die with message" {
+   EnableRawLogging
+   expected_output="Fatal: DisplayHelpMessages called with parameters! This is not supported!"
+   run DisplayHelpMessages "random"
+   
+   AssertStatus 1
+   AssertOutput "${expected_output}"
+}

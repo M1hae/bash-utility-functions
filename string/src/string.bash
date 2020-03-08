@@ -10,6 +10,7 @@ BU_STRING=1
 script_path="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source ${script_path}/../../logging/src/logging.bash
 
+# TODO: Move me to basic.bash if it was created
 function AssertNumberOfParameters() {
     if [[ ${1} -ne ${2} ]]; then
         Die "Function ${3} needs exactly ${1} parameter. You provided ${2}"

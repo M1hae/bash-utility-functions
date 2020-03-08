@@ -315,3 +315,20 @@ load ../../testing/test_utilities
     AssertStatus 0
     AssertOutput "${expect_string}"
 }
+
+
+# TODO: Move me to basic.bash
+@test "GIVEN called function, needed_parameters and provided_parameters, WHEN executing AssertNumberOfParameters, THEN terminate with message" {
+    EnableRawLogging
+    called_function="test"
+    needed_parameters=2
+    provided_parameters=3
+    expected_output="Fatal: Function ${called_function} needs exactly ${needed_parameters} parameter. You provided ${provided_parameters}"
+
+    run AssertNumberOfParameters ${needed_parameters} ${provided_parameters} ${called_function}
+
+    AssertStatus 1
+    AssertOutput "${expected_output}"
+}
+
+AssertNumberOfParameters
