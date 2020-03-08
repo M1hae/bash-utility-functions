@@ -35,8 +35,9 @@ Print info:
 
 Analog behavior can be expected for -f and -d. Of course with different output ;D... 
 
-# Doxygen documentation
-Can be found here -> https://m1hae.github.io/bash-utility-functions/docs/html/index.html <-
+# Documentation and other fun stuff
+Doxygen -> https://m1hae.github.io/bash-utility-functions/docs/html/index.html <-
+Coverage (with bashcov) -> https://m1hae.github.io/bash-utility-functions/coverage/index.html <-
 
 # How to run the tests
 You need to clone bats into the thirdparty folder first:
