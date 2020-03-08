@@ -68,10 +68,6 @@ function Fatal() {
 ## @retval Errorcode 1 Unsupported log level
 ## @details Switch log level to the passed one
 function SetLogLevel() {
-    if [[ "Debug" != "${1}" && "Info" != "${1}" && "Warning" != "${1}" && "Fatal" != "${1}" && "Disabled" != "${1}" ]]; then
-        Die "Not supported log level provided: ${1}"
-    fi
-    
     case "${1}" in
         Debug)
             bu_log_level=3
@@ -89,7 +85,7 @@ function SetLogLevel() {
             bu_log_level=-1
         ;;
         *)
-            Die "Unsupported log level"
+            Die "Not supported log level provided: ${1}"
         esac
 }
 
